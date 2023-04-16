@@ -1,14 +1,18 @@
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.stream.Stream;
 
 public class Permutation {
     public static void main(String[] args) {
-
 
         int[] ar = {1, 2, 3};
         ArrayList<ArrayList<Integer>> ans = new ArrayList<>();
         ArrayList<Integer> arl = new ArrayList<>();
         boolean[] map = new boolean[ar.length];
         generateAllPermutaions(ar, arl, map, ans);
+        ans.stream().forEach(ls->{ls.stream().forEach(System.out::print);
+            System.out.println();
+        });
     }
 
     private static void generateAllPermutaions(int[] ar, ArrayList<Integer> arl, boolean[] map,
